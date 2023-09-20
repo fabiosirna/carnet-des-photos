@@ -1,4 +1,5 @@
 # Carnet des photos
+
 A template for creating a 'carnet des photos' with LaTeX. 
 
 This is a template for creating a 'carnet des photos' with LaTeX. 
