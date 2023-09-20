@@ -1,0 +1,284 @@
+% This is a template for creating a 'carnet des photos' with LaTeX. 
+% The design of this template is minimalist, with a focus on images.
+% There are no indexes, table of contents, numbered pages.
+% Captions on images are optional; if present, the color is gray to minimize contrast and focus on the images.
+% Chapters are not numbered, and can be used to divide the book in multiple stories.
+
+% It was created by Fabio Sirna (https://fabiosirna.com), in September 2023 with the goal of being integrated 
+% into a FOSS photo workflow specifically using digikam (DAM), darktable (editing) and LaTeX (publishing).
+%
+
+%
+% By default the  
+%
+
+
+\documentclass[a4paper,twoside]{book}
+\usepackage{geometry}
+\geometry{
+	layout=a4paper,
+	ignoreall,
+	top=7em,
+	bottom=7em,
+	left=7em,
+	right=7em,
+	bindingoffset=5em
+}
+
+%
+% Uncomment the next lines to create a carnet in A5 format 
+%
+
+% \documentclass[a5paper,twoside]{book}
+
+% \usepackage{geometry}
+% \geometry{
+% 	layout=a5paper,
+% 	ignoreall,
+% 	top=5em,
+% 	bottom=5em,
+% 	left=5em,
+% 	right=5em,
+% 	bindingoffset=2em
+% }
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel} %Change or add other languages separated by a comma
+\usepackage{calc} % Package to calculate dimensions
+\usepackage{float}
+
+\usepackage{parskip}
+
+%
+% I use the geometry package to set the carnet format:
+%
+% ignoreall -> ignore header, footer and margins
+% bindingoffet -> Adds a space in the book spine to consider binding
+%
+
+%
+% Use the graphicx package to import images and set the default path where to find them
+%
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+%
+% Removes image caption numbering  
+%
+
+\usepackage{caption}
+\captionsetup{labelformat=empty}
+
+%
+% I'm using the Fira Sans font for the typography of the book. 
+% Change the font to another one choosing the typeface from https://tug.org/FontCatalogue/
+%
+
+\usepackage[sfdefault,book]{FiraSans} %% option 'sfdefault' activates Fira Sans as the default text font
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+
+%
+% I'm using the fancyhdr package to hide the pages numbers
+%
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot{}
+
+%
+% I'm using titlesec package to customize the style of chapter titles
+%
+
+\usepackage{titlesec}  
+
+\titleformat{\chapter}[display]
+  {\normalfont\Huge\bfseries\raggedleft}
+  {}
+  {0pt}
+  {\vfill\MakeUppercase} % Chapter are uppercase
+  [\vfill\thispagestyle{empty}] % Remove page number
+
+%
+% Change the color of the text
+%
+\usepackage[dvipsnames]{xcolor}
+
+% Definisci il colore nero al 90%
+% \definecolor{black90}{rgb}{0,0,0.5}
+
+% Set the default text color
+\color{Gray}
+
+%
+% Uncomment next line to use the package and print the layout design. 
+% See section at the end of this template.
+%
+% \usepackage{layout}  
+%
+
+%
+% \usepackage{lipsum}
+%
+
+% Inserts a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Begin of document %
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% To print current layout
+
+\frontmatter 
+
+\color{Black}
+\title{Carnet des photo}
+\author{Fabio Sirna}
+\date{September 2023}
+
+\maketitle
+
+\mainmatter 
+
+%
+% I set up a page to insert a book dedication
+%
+
+\thispagestyle{empty} % Hide page number
+
+\begin{flushright}
+    \vspace*{\stretch{1}} % Blank space that takes up all the rest of the page
+    \emph{Dedicated to anyone}\\
+    \emph{you want to dedicate this page.}\\
+    \vspace*{\stretch{2}} % Blank space to push text to the upper right.
+\end{flushright}
+
+% First chapter
+% Color of the chapter can be customised to match —for example— the color of the cover.
+% Chapter is not numbered, remove asterisk to add automatic numbering
+
+\color{BrickRed}
+\chapter*{Chapter title}
+
+% After the chapter page, I like to have a blank page to start the story on an odd page. 
+\blankpage
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{landscape.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{landscape.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{portrait.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{portrait.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{portrait.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{portrait.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage 
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{landscape.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{landscape.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{landscape.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{landscape.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+% To insert a blank page in case the number of pictures is odd and have the next chapter start on an odd page.
+
+\blankpage
+
+% Other chapters
+
+\chapter*{Yet another chapter}
+
+% After the chapter page, I like to have a blank page to start the story on an odd page. 
+\blankpage
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{landscape.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{portrait.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{landscape.png}
+	\caption{My beautiful caption that can probably span more lines, as it can be very very long because I don't know what I'm going to write here as it depends from my creativity and information I want to write here.}
+\end{figure}
+
+\blankpage
+
+% If you want to change the design of the template remove the comment in the following section to print the layout package information.
+% See the comment at the beginning of the file. 
+
+% \chapter*{Layout}
+% \newpage
+% \layout
+
+\end{document}
