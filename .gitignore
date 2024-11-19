@@ -1,1 +1,8 @@
 .DS_Store
+carnet-des-photos.aux
+.gitignore
+carnet-des-photos.fdb_latexmk
+carnet-des-photos.fls
+carnet-des-photos.log
+carnet-des-photos.synctex.gz
+carnet-des-photos.bbl
